@@ -12,7 +12,7 @@ public class ReverseString {
 
 	/**
 	 * This method will read a String from standard input 
-     * and print the character-reversed string to standard output.  
+         * and print the character-reversed string to standard output.  
 	 * @param args
 	 */
 	public static void main(String[] args) {
