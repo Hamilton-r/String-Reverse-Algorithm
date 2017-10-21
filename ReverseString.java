@@ -11,37 +11,32 @@ import java.util.Scanner;
 public class ReverseString {
 
 	/**
-	 * This method will take in a string, convert that to a 
-	 * char array, then swap the contents of the array from back to front
-	 * meeting in the middle.
+	 * This method will read a String from standard input 
+     * and print the character-reversed string to standard output.  
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		//declare variables
 		Scanner input = new Scanner(System.in);
-		String inputString = "";
-		int length = 0, indexStart = 0, indexEnd = 0;
 		
 		//get input string
 		System.out.print("Enter the string you want to reverse: ");
-		inputString = input.nextLine();
+		String inputString = input.nextLine();
 		
-		//find length of string, it needs to be reduced by one to prevent an error
-		//as index start at 0.
-		length = inputString.length()-1;
-		//set 'indexOfReferenceArray' equal to string.length-1 for use later in loop
-		indexEnd = length;
+		//set 'indexEnd' equal to string.length-1 for use later in loop
+		int indexEnd = inputString.length()-1;
 		
-		//convert to arrays
+		//convert to array
 		char[] array = inputString.toCharArray();
 		
+		int indexStart = 0;
 		//loop through and reverse order until two vars meet in middle of array
-		while (indexStart<=(length/2)) {
+		while (indexStart < indexEnd) {
 			//swap array elements
 			char temp = array[indexStart];
 			array[indexStart] = array[indexEnd];
 			array[indexEnd] = temp;
-			//increment/decrement to move through arrays
+			//increment/decrement to move through array
 			indexStart++;
 			indexEnd--;
 		}
